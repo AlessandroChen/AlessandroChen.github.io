@@ -16,7 +16,7 @@ fcitx官方给出了原生生成细胞词库的接口，以适应中文输入中
 
 
 # 安装
-{ % note info % } 安装脚本我已上传至 [github](https://github.com/AlessandroChen/fcitx-pinyin-lexicon) 安装方法附在 `README.md`中 { % endnote % }
+{% note info %} 安装脚本我已上传至 [github](https://github.com/AlessandroChen/fcitx-pinyin-lexicon) 安装方法附在 `README.md`中 {% endnote %}
 
 首先到[搜狗细胞词库](https://pinyin.sogou.com/dict/)下载你需要用到的词库，到`~/Downloads/`目录下
 
