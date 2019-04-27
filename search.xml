@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Hexo + Github 搭建备份博客]]></title>
+    <url>%2F2019%2F04%2F27%2FHexo-Github-%E6%90%AD%E5%BB%BA%E5%A4%87%E4%BB%BD%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"><![CDATA[本篇先咕咕咕啦]]></content>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Fcitx添加词库]]></title>
+    <url>%2F2019%2F04%2F27%2FFcitx%E6%B7%BB%E5%8A%A0%E8%AF%8D%E5%BA%93%2F</url>
+    <content type="text"><![CDATA[前言 作为全球最大的Linux开源输入法，fcitx保持了一贯的高效、简捷。 fcitx官方给出了原生生成细胞词库的接口，以适应中文输入中专有、常用语句的拼写。 本文将介绍怎样转换、导入狗细胞词库到fcitx的拼音词库中。 安装 安装脚本我已上传至 github 安装方法附在 README.md中 首先到搜狗细胞词库下载你需要用到的词库，到~/Downloads/目录下 然后，clone我上传好的文件和脚本 1$ git clone https://github.com/AlessandroChen/fcitx-pinyin-lexicon.git 你可以使用fcitx-pinyin-lexicon下的install.sh直接进行安装(强烈推荐)，也可以按照以下步骤逐步完成： 12345678910111213$ cd fcitx-pinyin-lexicon$ mkdir tmp &amp;&amp; cd tmp$ mv ~/Downloads/*.scel ./# 转换为 org 文件$ mkdir org$ for i in *.scel; do scel2org $i -o org/$i.org; done$ cp ../pyPhrase.org org/# 生成词库$ mkdir dict &amp;&amp; cd dict$ cat ../org/* | sort | uniq &gt; ultimate.org$ createPYMB ../../gbkpy.org ultimate.org 转换过程可能比较长，耐心等待。最后会生成如下几个文件： pyERROR 词库中重复或有问题的条目 pyPhrase.ok 除错后的org词库文件 pyphrase.mb 最终词库 pybase.mb 配套的字码库 下面将词库放在 fcitx 的目录下，然后重启 fcitx 就完成了 12$ mv pyphrase.mb ~/.config/fcitx/pinyin/$ mv pybase.mb ~/.config/fcitx/pinyin/]]></content>
+      <categories>
+        <category>应用程序</category>
+      </categories>
+      <tags>
+        <tag>fcitx</tag>
+      </tags>
+  </entry>
+</search>

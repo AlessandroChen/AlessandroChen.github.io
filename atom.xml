@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>CodeAlex</title>
+  
+  <subtitle>Hello the Cruel World</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://alessandrochen.github.io/"/>
+  <updated>2019-04-27T13:46:31.655Z</updated>
+  <id>http://alessandrochen.github.io/</id>
+  
+  <author>
+    <name>CYC</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo + Github 搭建备份博客</title>
+    <link href="http://alessandrochen.github.io/2019/04/27/Hexo-Github-%E6%90%AD%E5%BB%BA%E5%A4%87%E4%BB%BD%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://alessandrochen.github.io/2019/04/27/Hexo-Github-搭建备份博客/</id>
+    <published>2019-04-27T13:20:25.000Z</published>
+    <updated>2019-04-27T13:46:31.655Z</updated>
+    
+    <content type="html"><![CDATA[<p>本篇先咕咕咕啦</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;本篇先咕咕咕啦&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="Hexo" scheme="http://alessandrochen.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Fcitx添加词库</title>
+    <link href="http://alessandrochen.github.io/2019/04/27/Fcitx%E6%B7%BB%E5%8A%A0%E8%AF%8D%E5%BA%93/"/>
+    <id>http://alessandrochen.github.io/2019/04/27/Fcitx添加词库/</id>
+    <published>2019-04-27T02:27:51.000Z</published>
+    <updated>2019-04-27T13:15:24.550Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言">前言</h1><p>作为全球最大的Linux开源输入法，fcitx保持了一贯的高效、简捷。 fcitx官方给出了原生生成细胞词库的接口，以适应中文输入中专有、常用语句的拼写。</p><p>本文将介绍怎样转换、导入狗细胞词库到fcitx的拼音词库中。</p><a id="more"></a><h1 id="安装">安装</h1><div class="note info">            <p>安装脚本我已上传至 <a href="https://github.com/AlessandroChen/fcitx-pinyin-lexicon" target="_blank" rel="noopener">github</a> 安装方法附在 <code>README.md</code>中 </p>          </div><p>首先到<a href="https://pinyin.sogou.com/dict/" target="_blank" rel="noopener">搜狗细胞词库</a>下载你需要用到的词库，到<code>~/Downloads/</code>目录下</p><p>然后，<code>clone</code>我上传好的文件和脚本 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/AlessandroChen/fcitx-pinyin-lexicon.git</span><br></pre></td></tr></table></figure></p><p>你可以使用<code>fcitx-pinyin-lexicon</code>下的<code>install.sh</code>直接进行安装(<strong>强烈推荐</strong>)，也可以按照以下步骤逐步完成：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> fcitx-pinyin-lexicon</span><br><span class="line">$ mkdir tmp &amp;&amp; <span class="built_in">cd</span> tmp</span><br><span class="line">$ mv ~/Downloads/*.scel ./</span><br><span class="line"></span><br><span class="line"><span class="comment"># 转换为 org 文件</span></span><br><span class="line">$ mkdir org</span><br><span class="line">$ <span class="keyword">for</span> i <span class="keyword">in</span> *.scel; <span class="keyword">do</span> scel2org <span class="variable">$i</span> -o org/<span class="variable">$i</span>.org; <span class="keyword">done</span></span><br><span class="line">$ cp ../pyPhrase.org org/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成词库</span></span><br><span class="line">$ mkdir dict &amp;&amp; <span class="built_in">cd</span> dict</span><br><span class="line">$ cat ../org/* | sort | uniq &gt; ultimate.org</span><br><span class="line">$ createPYMB ../../gbkpy.org ultimate.org</span><br></pre></td></tr></table></figure><p>转换过程可能比较长，耐心等待。最后会生成如下几个文件：</p><ul><li>pyERROR 词库中重复或有问题的条目</li><li>pyPhrase.ok 除错后的org词库文件</li><li>pyphrase.mb 最终词库</li><li>pybase.mb 配套的字码库</li></ul><p>下面将词库放在 fcitx 的目录下，然后重启 fcitx 就完成了 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mv pyphrase.mb ~/.config/fcitx/pinyin/</span><br><span class="line">$ mv pybase.mb ~/.config/fcitx/pinyin/</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;前言&quot;&gt;前言&lt;/h1&gt;
+&lt;p&gt;作为全球最大的Linux开源输入法，fcitx保持了一贯的高效、简捷。 fcitx官方给出了原生生成细胞词库的接口，以适应中文输入中专有、常用语句的拼写。&lt;/p&gt;
+&lt;p&gt;本文将介绍怎样转换、导入狗细胞词库到fcitx的拼音词库中。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="应用程序" scheme="http://alessandrochen.github.io/categories/%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/"/>
+    
+    
+      <category term="fcitx" scheme="http://alessandrochen.github.io/tags/fcitx/"/>
+    
+  </entry>
+  
+</feed>
