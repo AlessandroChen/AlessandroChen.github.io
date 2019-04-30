@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="前言 作为全球最大的Linux开源输入法，fcitx保持了一贯的高效、简捷。 fcitx官方给出了原生生成细胞词库的接口，以适应中文输入中专有、常用语句的拼写。 本文将介绍怎样转换、导入狗细胞词库到fcitx的拼音词库中。">
-<meta name="keywords" content="fcitx">
+  <meta name="description" content="This concludes the Vim Tutor. It was intended to give a brief overview of the Vim editor, just enough to allow you to use the editor fairly easily. It is far from complete as Vim has many many more co">
+<meta name="keywords" content="IT">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Fcitx添加词库">
-<meta property="og:url" content="http://alessandrochen.github.io/2019/04/27/Fcitx添加词库/index.html">
+<meta property="og:title" content="Vimtutor Summaries">
+<meta property="og:url" content="http://alessandrochen.github.io/2019/04/30/Vimtutor-Summaries/index.html">
 <meta property="og:site_name" content="CodeAlex">
-<meta property="og:description" content="前言 作为全球最大的Linux开源输入法，fcitx保持了一贯的高效、简捷。 fcitx官方给出了原生生成细胞词库的接口，以适应中文输入中专有、常用语句的拼写。 本文将介绍怎样转换、导入狗细胞词库到fcitx的拼音词库中。">
+<meta property="og:description" content="This concludes the Vim Tutor. It was intended to give a brief overview of the Vim editor, just enough to allow you to use the editor fairly easily. It is far from complete as Vim has many many more co">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-27T13:15:24.550Z">
+<meta property="og:updated_time" content="2019-04-30T14:10:18.623Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Fcitx添加词库">
-<meta name="twitter:description" content="前言 作为全球最大的Linux开源输入法，fcitx保持了一贯的高效、简捷。 fcitx官方给出了原生生成细胞词库的接口，以适应中文输入中专有、常用语句的拼写。 本文将介绍怎样转换、导入狗细胞词库到fcitx的拼音词库中。">
+<meta name="twitter:title" content="Vimtutor Summaries">
+<meta name="twitter:description" content="This concludes the Vim Tutor. It was intended to give a brief overview of the Vim editor, just enough to allow you to use the editor fairly easily. It is far from complete as Vim has many many more co">
 
 
 
@@ -117,7 +117,7 @@
 
   
   
-  <link rel="canonical" href="http://alessandrochen.github.io/2019/04/27/Fcitx添加词库/">
+  <link rel="canonical" href="http://alessandrochen.github.io/2019/04/30/Vimtutor-Summaries/">
 
 
 
@@ -127,7 +127,7 @@
   };
 </script>
 
-  <title>Fcitx添加词库 | CodeAlex</title>
+  <title>Vimtutor Summaries | CodeAlex</title>
   
 
 
@@ -393,7 +393,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://alessandrochen.github.io/2019/04/27/Fcitx添加词库/">
+    <link itemprop="mainEntityOfPage" href="http://alessandrochen.github.io/2019/04/30/Vimtutor-Summaries/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="CYC">
@@ -410,7 +410,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Fcitx添加词库
+          <h1 class="post-title" itemprop="name headline">Vimtutor Summaries
 
               
             
@@ -436,7 +436,7 @@
                 
               
 
-              <time title="Created: 2019-04-27 10:27:51 / Modified: 21:15:24" itemprop="dateCreated datePublished" datetime="2019-04-27T10:27:51+08:00">2019-04-27</time>
+              <time title="Created: 2019-04-30 17:31:24 / Modified: 22:10:18" itemprop="dateCreated datePublished" datetime="2019-04-30T17:31:24+08:00">2019-04-30</time>
             
 
             
@@ -446,24 +446,6 @@
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/应用程序/" itemprop="url" rel="index"><span itemprop="name">应用程序</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -493,26 +475,91 @@
       
 
       
-        <h1 id="前言">前言</h1>
-<p>作为全球最大的Linux开源输入法，fcitx保持了一贯的高效、简捷。 fcitx官方给出了原生生成细胞词库的接口，以适应中文输入中专有、常用语句的拼写。</p>
-<p>本文将介绍怎样转换、导入狗细胞词库到fcitx的拼音词库中。</p>
-<a id="more"></a>
-<h1 id="安装">安装</h1>
-<div class="note info">
-            <p>安装脚本我已上传至 <a href="https://github.com/AlessandroChen/fcitx-pinyin-lexicon" target="_blank" rel="noopener">github</a> 安装方法附在 <code>README.md</code>中 </p>
-          </div>
-<p>首先到<a href="https://pinyin.sogou.com/dict/" target="_blank" rel="noopener">搜狗细胞词库</a>下载你需要用到的词库，到<code>~/Downloads/</code>目录下</p>
-<p>然后，<code>clone</code>我上传好的文件和脚本 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/AlessandroChen/fcitx-pinyin-lexicon.git</span><br></pre></td></tr></table></figure></p>
-<p>你可以使用<code>fcitx-pinyin-lexicon</code>下的<code>install.sh</code>直接进行安装(<strong>强烈推荐</strong>)，也可以按照以下步骤逐步完成：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> fcitx-pinyin-lexicon</span><br><span class="line">$ mkdir tmp &amp;&amp; <span class="built_in">cd</span> tmp</span><br><span class="line">$ mv ~/Downloads/*.scel ./</span><br><span class="line"></span><br><span class="line"><span class="comment"># 转换为 org 文件</span></span><br><span class="line">$ mkdir org</span><br><span class="line">$ <span class="keyword">for</span> i <span class="keyword">in</span> *.scel; <span class="keyword">do</span> scel2org <span class="variable">$i</span> -o org/<span class="variable">$i</span>.org; <span class="keyword">done</span></span><br><span class="line">$ cp ../pyPhrase.org org/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成词库</span></span><br><span class="line">$ mkdir dict &amp;&amp; <span class="built_in">cd</span> dict</span><br><span class="line">$ cat ../org/* | sort | uniq &gt; ultimate.org</span><br><span class="line">$ createPYMB ../../gbkpy.org ultimate.org</span><br></pre></td></tr></table></figure>
-<p>转换过程可能比较长，耐心等待。最后会生成如下几个文件：</p>
-<ul>
-<li>pyERROR 词库中重复或有问题的条目</li>
-<li>pyPhrase.ok 除错后的org词库文件</li>
-<li>pyphrase.mb 最终词库</li>
-<li>pybase.mb 配套的字码库</li>
-</ul>
-<p>下面将词库放在 fcitx 的目录下，然后重启 fcitx 就完成了 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mv pyphrase.mb ~/.config/fcitx/pinyin/</span><br><span class="line">$ mv pybase.mb ~/.config/fcitx/pinyin/</span><br></pre></td></tr></table></figure></p>
+        <p>This concludes the Vim Tutor. It was intended to give a brief overview of the Vim editor, just enough to allow you to use the editor fairly easily.</p>
+<p>It is far from complete as Vim has many many more commands. But unless you are familar with these operations, you won't go further more through Vim.</p>
+<h1 id="lesson-1">Lesson 1</h1>
+<ol type="1">
+<li><p>The cursor is moved using either the arrow keys or the <code>hjkl</code> keys.</p></li>
+<li><p>To start Vim from the shell prompt type: <code>vim FILENAME &lt;ENTER&gt;</code></p></li>
+<li><p>To exit Vim type: <code>&lt;ESC&gt;   :q!   &lt;ENTER&gt;</code> to trash all changes.</p></li>
+</ol>
+<p>  OR type: <code>&lt;ESC&gt;   :wq   &lt;ENTER&gt;</code> to save the changes.</p>
+<ol start="4" type="1">
+<li><p>To delete the character at the cursor type: <code>x</code></p></li>
+<li><p>To insert or append text type:</p></li>
+</ol>
+<p>  <code>i</code> type inserted text <code>&lt;ESC&gt;</code> insert before the cursor</p>
+<p>  <code>A</code> type appended text <code>&lt;ESC&gt;</code> append after the line</p>
+<p>NOTE: Pressing <code>&lt;ESC&gt;</code> will place you in Normal mode or will cancel an unwanted and partially completed command.</p>
+<h1 id="lesson-2">Lesson 2</h1>
+<ol type="1">
+<li>To delete from the cursor up to the next word type: <code>dw</code></li>
+<li>To delete from the cursor to the end of a line type: <code>d$</code></li>
+<li>To delete a whole line type: <code>dd</code></li>
+<li>To repeat a motion prepend it with a number: <code>2w</code></li>
+<li><p>The format for a change command is:</p>
+<pre><code>                operator   [number]   motion
+      where:
+        operator - is what to do, such as  d  for delete
+        [number] - is an optional count to repeat the motion
+        motion   - moves over the text to operate on, such as  w (word),
+                   $ (to the end of line), etc.</code></pre></li>
+<li><p>To move to the start of the line use a zero: <code>0</code></p></li>
+<li><p>To undo previous actions, type: <code>u</code> (lowercase u)</p>
+<p>To undo all the changes on a line, type: <code>U</code> (capital U)</p>
+<p>To undo the undo's, type: <code>CTRL-R</code></p></li>
+</ol>
+<h1 id="lesson-3">Lesson 3</h1>
+<ol type="1">
+<li><p>To put back text that has just been deleted, type <code>p</code> . This puts the deleted text AFTER the cursor (if a line was deleted it will go on the line below the cursor).</p></li>
+<li><p>To replace the character under the cursor, type <code>r</code> and then the character you want to have there.</p></li>
+<li><p>The change operator allows you to change from the cursor to where the motion takes you. eg. Type <code>ce</code> to change from the cursor to the end of the word, <code>c$</code> to change to the end of a line.</p></li>
+<li><p>The format for change is:</p>
+<pre><code>  c   [number]   motion</code></pre></li>
+</ol>
+<h1 id="lesson-4">Lesson 4</h1>
+<ol type="1">
+<li><p><code>CTRL-G</code> displays your location in the file and the file status. <code>G</code> moves to the end of the file. <code>number  G</code> moves to that line number. <code>gg</code> moves to the first line.</p></li>
+<li><p>Typing <code>/</code> followed by a phrase searches FORWARD for the phrase. Typing <code>?</code> followed by a phrase searches BACKWARD for the phrase. After a search type <code>n</code> to find the next occurrence in the same direction or <code>N</code> to search in the opposite direction. <code>CTRL-O</code> takes you back to older positions, <code>CTRL-I</code> to newer positions.</p></li>
+<li><p>Typing <code>%</code> while the cursor is on a <code>(,),[,],{,</code> or <code>}</code> goes to its match.</p></li>
+<li><p>To substitute new for the first old in a line type <code>:s/old/new</code></p>
+<p>To substitute new for all 'old's on a line type <code>:s/old/new/g</code></p>
+<p>To substitute phrases between two line #'s type <code>:#,#s/old/new/g</code></p>
+<p>To substitute all occurrences in the file type <code>:%s/old/new/g</code></p>
+<p>To ask for confirmation each time add 'c' <code>:%s/old/new/gc</code></p></li>
+</ol>
+<h1 id="lesson-5">Lesson 5</h1>
+<ol type="1">
+<li><p><code>:!command</code> executes an external command.</p>
+<p>Some useful examples are:</p></li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th>(Windows)</th>
+<th>(Unix)</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>:!dir</code></td>
+<td><code>:!ls</code></td>
+<td>shows a directory listing.</td>
+</tr>
+<tr class="even">
+<td><code>:!del FILENAME</code></td>
+<td><code>:!rm FILENAME</code></td>
+<td>removes file FILENAME.</td>
+</tr>
+</tbody>
+</table>
+<ol start="2" type="1">
+<li><p><code>:w FILENAME</code> writes the current Vim file to disk with name FILENAME.</p></li>
+<li><p><code>v  motion  :w FILENAME</code> saves the Visually selected lines in file FILENAME.</p></li>
+<li><p><code>:r FILENAME</code> retrieves disk file FILENAME and puts it below the cursor position.</p></li>
+<li><p><code>:r !dir</code> reads the output of the dir command and puts it below the cursor position.</p></li>
+</ol>
 
       
     </div>
@@ -547,7 +594,7 @@
   <li class="post-copyright-link">
     <strong>Post link: </strong>
     
-    <a href="http://alessandrochen.github.io/2019/04/27/Fcitx添加词库/" title="Fcitx添加词库">http://alessandrochen.github.io/2019/04/27/Fcitx添加词库/</a>
+    <a href="http://alessandrochen.github.io/2019/04/30/Vimtutor-Summaries/" title="Vimtutor Summaries">http://alessandrochen.github.io/2019/04/30/Vimtutor-Summaries/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.</li>
@@ -560,7 +607,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/fcitx/" rel="tag"># fcitx</a>
+            <a href="/tags/IT/" rel="tag"># IT</a>
           
         </div>
       
@@ -573,15 +620,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/04/27/Hexo-Github-搭建备份博客/" rel="next" title="Hexo + Github 搭建备份博客">
+                <i class="fa fa-chevron-left"></i> Hexo + Github 搭建备份博客
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/27/Hexo-Github-搭建备份博客/" rel="prev" title="Hexo + Github 搭建备份博客">
-                Hexo + Github 搭建备份博客 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -737,7 +784,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lesson-1"><span class="nav-number">1.</span> <span class="nav-text">Lesson 1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lesson-2"><span class="nav-number">2.</span> <span class="nav-text">Lesson 2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lesson-3"><span class="nav-number">3.</span> <span class="nav-text">Lesson 3</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lesson-4"><span class="nav-number">4.</span> <span class="nav-text">Lesson 4</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lesson-5"><span class="nav-number">5.</span> <span class="nav-text">Lesson 5</span></a></li></ol></div>
             
 
           </div>

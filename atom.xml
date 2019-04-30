@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://alessandrochen.github.io/"/>
-  <updated>2019-04-27T13:46:31.655Z</updated>
+  <updated>2019-04-30T14:10:18.623Z</updated>
   <id>http://alessandrochen.github.io/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Vimtutor Summaries</title>
+    <link href="http://alessandrochen.github.io/2019/04/30/Vimtutor-Summaries/"/>
+    <id>http://alessandrochen.github.io/2019/04/30/Vimtutor-Summaries/</id>
+    <published>2019-04-30T09:31:24.000Z</published>
+    <updated>2019-04-30T14:10:18.623Z</updated>
+    
+    <content type="html"><![CDATA[<p>This concludes the Vim Tutor. It was intended to give a brief overview of the Vim editor, just enough to allow you to use the editor fairly easily.</p><p>It is far from complete as Vim has many many more commands. But unless you are familar with these operations, you won't go further more through Vim.</p><h1 id="lesson-1">Lesson 1</h1><ol type="1"><li><p>The cursor is moved using either the arrow keys or the <code>hjkl</code> keys.</p></li><li><p>To start Vim from the shell prompt type: <code>vim FILENAME &lt;ENTER&gt;</code></p></li><li><p>To exit Vim type: <code>&lt;ESC&gt;   :q!   &lt;ENTER&gt;</code> to trash all changes.</p></li></ol><p>  OR type: <code>&lt;ESC&gt;   :wq   &lt;ENTER&gt;</code> to save the changes.</p><ol start="4" type="1"><li><p>To delete the character at the cursor type: <code>x</code></p></li><li><p>To insert or append text type:</p></li></ol><p>  <code>i</code> type inserted text <code>&lt;ESC&gt;</code> insert before the cursor</p><p>  <code>A</code> type appended text <code>&lt;ESC&gt;</code> append after the line</p><p>NOTE: Pressing <code>&lt;ESC&gt;</code> will place you in Normal mode or will cancel an unwanted and partially completed command.</p><h1 id="lesson-2">Lesson 2</h1><ol type="1"><li>To delete from the cursor up to the next word type: <code>dw</code></li><li>To delete from the cursor to the end of a line type: <code>d$</code></li><li>To delete a whole line type: <code>dd</code></li><li>To repeat a motion prepend it with a number: <code>2w</code></li><li><p>The format for a change command is:</p><pre><code>                operator   [number]   motion      where:        operator - is what to do, such as  d  for delete        [number] - is an optional count to repeat the motion        motion   - moves over the text to operate on, such as  w (word),                   $ (to the end of line), etc.</code></pre></li><li><p>To move to the start of the line use a zero: <code>0</code></p></li><li><p>To undo previous actions, type: <code>u</code> (lowercase u)</p><p>To undo all the changes on a line, type: <code>U</code> (capital U)</p><p>To undo the undo's, type: <code>CTRL-R</code></p></li></ol><h1 id="lesson-3">Lesson 3</h1><ol type="1"><li><p>To put back text that has just been deleted, type <code>p</code> . This puts the deleted text AFTER the cursor (if a line was deleted it will go on the line below the cursor).</p></li><li><p>To replace the character under the cursor, type <code>r</code> and then the character you want to have there.</p></li><li><p>The change operator allows you to change from the cursor to where the motion takes you. eg. Type <code>ce</code> to change from the cursor to the end of the word, <code>c$</code> to change to the end of a line.</p></li><li><p>The format for change is:</p><pre><code>  c   [number]   motion</code></pre></li></ol><h1 id="lesson-4">Lesson 4</h1><ol type="1"><li><p><code>CTRL-G</code> displays your location in the file and the file status. <code>G</code> moves to the end of the file. <code>number  G</code> moves to that line number. <code>gg</code> moves to the first line.</p></li><li><p>Typing <code>/</code> followed by a phrase searches FORWARD for the phrase. Typing <code>?</code> followed by a phrase searches BACKWARD for the phrase. After a search type <code>n</code> to find the next occurrence in the same direction or <code>N</code> to search in the opposite direction. <code>CTRL-O</code> takes you back to older positions, <code>CTRL-I</code> to newer positions.</p></li><li><p>Typing <code>%</code> while the cursor is on a <code>(,),[,],{,</code> or <code>}</code> goes to its match.</p></li><li><p>To substitute new for the first old in a line type <code>:s/old/new</code></p><p>To substitute new for all 'old's on a line type <code>:s/old/new/g</code></p><p>To substitute phrases between two line #'s type <code>:#,#s/old/new/g</code></p><p>To substitute all occurrences in the file type <code>:%s/old/new/g</code></p><p>To ask for confirmation each time add 'c' <code>:%s/old/new/gc</code></p></li></ol><h1 id="lesson-5">Lesson 5</h1><ol type="1"><li><p><code>:!command</code> executes an external command.</p><p>Some useful examples are:</p></li></ol><table><thead><tr class="header"><th>(Windows)</th><th>(Unix)</th><th></th></tr></thead><tbody><tr class="odd"><td><code>:!dir</code></td><td><code>:!ls</code></td><td>shows a directory listing.</td></tr><tr class="even"><td><code>:!del FILENAME</code></td><td><code>:!rm FILENAME</code></td><td>removes file FILENAME.</td></tr></tbody></table><ol start="2" type="1"><li><p><code>:w FILENAME</code> writes the current Vim file to disk with name FILENAME.</p></li><li><p><code>v  motion  :w FILENAME</code> saves the Visually selected lines in file FILENAME.</p></li><li><p><code>:r FILENAME</code> retrieves disk file FILENAME and puts it below the cursor position.</p></li><li><p><code>:r !dir</code> reads the output of the dir command and puts it below the cursor position.</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;This concludes the Vim Tutor. It was intended to give a brief overview of the Vim editor, just enough to allow you to use the editor fair
+      
+    
+    </summary>
+    
+    
+      <category term="IT" scheme="http://alessandrochen.github.io/tags/IT/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hexo + Github 搭建备份博客</title>
     <link href="http://alessandrochen.github.io/2019/04/27/Hexo-Github-%E6%90%AD%E5%BB%BA%E5%A4%87%E4%BB%BD%E5%8D%9A%E5%AE%A2/"/>
     <id>http://alessandrochen.github.io/2019/04/27/Hexo-Github-搭建备份博客/</id>
     <published>2019-04-27T13:20:25.000Z</published>
-    <updated>2019-04-27T13:46:31.655Z</updated>
+    <updated>2019-04-28T13:45:16.899Z</updated>
     
     <content type="html"><![CDATA[<p>本篇先咕咕咕啦</p>]]></content>
     

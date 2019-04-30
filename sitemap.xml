@@ -2,16 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://alessandrochen.github.io/2019/04/30/Vimtutor-Summaries/</loc>
+    
+    <lastmod>2019-04-30T14:10:18.623Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://alessandrochen.github.io/2019/04/27/Hexo-Github-%E6%90%AD%E5%BB%BA%E5%A4%87%E4%BB%BD%E5%8D%9A%E5%AE%A2/</loc>
     
-    <lastmod>2019-04-27T13:46:31.655Z</lastmod>
+    <lastmod>2019-04-28T13:45:16.899Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://alessandrochen.github.io/categories/index.html</loc>
     
-    <lastmod>2019-04-27T13:45:19.359Z</lastmod>
+    <lastmod>2019-04-28T13:42:12.357Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://alessandrochen.github.io/schedule/index.html</loc>
+    
+    <lastmod>2019-04-28T13:38:30.058Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://alessandrochen.github.io/about/index.html</loc>
+    
+    <lastmod>2019-04-28T13:38:02.904Z</lastmod>
     
   </url>
   
@@ -24,20 +45,6 @@
   
   <url>
     <loc>http://alessandrochen.github.io/2019/04/27/Fcitx%E6%B7%BB%E5%8A%A0%E8%AF%8D%E5%BA%93/</loc>
-    
-    <lastmod>2019-04-27T13:15:24.550Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://alessandrochen.github.io/about/index.html</loc>
-    
-    <lastmod>2019-04-27T13:15:24.550Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://alessandrochen.github.io/schedule/index.html</loc>
     
     <lastmod>2019-04-27T13:15:24.550Z</lastmod>
     
